@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -37,7 +38,7 @@ namespace Mahou {
 		public static void Main(string[] args) {
 			LogHelper.ConfigureNlog();
 			log.Trace("Program start");
-			using(var mutex = new Mutex(false, "Global\\" + appGUid)) {
+			using(var mutex = new Mutex(false, "Local\\" + appGUid)) {
 				log.Trace("Mutex created");
 				if(!mutex.WaitOne(0, false)) {
 					KMHook.PostMessage((IntPtr)0xffff, ao, 0, 0);
@@ -46,12 +47,14 @@ namespace Mahou {
 				if(locales.Length < 2) {
 					Locales.IfLessThan2();
 				} else {
+					Application.EnableVisualStyles();
+					Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f));
+					Application.SetCompatibleTextRenderingDefault(false);
 					mahou = new MahouForm();
 					InitLanguage();
 					//Refreshes icon text language at startup
 					mahou.icon.RefreshText(MMain.UI[44], MMain.UI[42], MMain.UI[43]);
 					KMHook.ReInitSnippets();
-					Application.EnableVisualStyles(); // Huh i did not noticed that it was missing... '~'
 					StartHook();
 					//for first run, add your locale 1 & locale 2 to settings
 					if(MyConfs.Read("Locales", "locale1Lang") == "" && MyConfs.Read("Locales", "locale2Lang") == "") {

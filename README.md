@@ -28,29 +28,38 @@ MahouSwitcher - Windows-утилита для быстрого переключ�
 
 ## Сборка
 
-Нужны Windows, NuGet и MSBuild/Visual Studio с поддержкой .NET Framework 4.5.
+Для сборки нужен .NET 10 SDK или Visual Studio 2022 с workload `.NET desktop development`.
+Для запуска опубликованной сборки .NET устанавливать не нужно: релиз собирается как self-contained single-file.
 
 ```powershell
 cd Mahou
-nuget restore Mahou.sln
 .\buildMahou.cmd
 ```
 
-Готовый файл появится в `Mahou\bin\Release\Mahou.exe`.
+Готовый x64-релиз появится в `Mahou\publish\win-x64\Mahou.exe`.
 
-То же самое можно собрать из Visual Studio: откройте `Mahou\Mahou.sln`, выберите конфигурацию `Release|x86` и запустите Build.
+Для 32-битной Windows 10 можно собрать отдельный вариант:
+
+```powershell
+cd Mahou
+.\buildMahou.cmd win-x86
+```
+
+Из Visual Studio используйте Publish Profile `win-x64` или `win-x86`.
+
+Для публичного распространения подпишите `Mahou.exe` code-signing сертификатом, иначе Windows SmartScreen может предупреждать о неизвестном издателе.
 
 ## Структура
 
 - `Mahou\Mahou.sln` - решение Visual Studio.
-- `Mahou\Mahou.csproj` - WinForms-проект под .NET Framework 4.5.
+- `Mahou\Mahou.csproj` - SDK-style WinForms-проект под .NET 10.
 - `Mahou\Classes` - хуки клавиатуры/мыши, работа с раскладками, конфигурацией и буфером обмена.
 - `Mahou\Resources` - иконки приложения.
 - `LICENSE.md` - лицензия проекта.
 
 ## Настройки
 
-При первом запуске приложение создает `Mahou.ini` в папке с `Mahou.exe`. Чтобы сбросить настройки, закройте приложение и удалите этот файл.
+При первом запуске приложение создает настройки в `%LOCALAPPDATA%\MahouSwitcher`. Старые `Mahou.ini` и `snippets.txt` рядом с `Mahou.exe` будут мягко скопированы туда при первом запуске новой версии.
 
 Если в системе меньше двух раскладок, приложению нечего переключать: добавьте нужные языки ввода в настройках Windows.
 

@@ -13,12 +13,13 @@ namespace Mahou
 		ColorDialog clrd = new ColorDialog();
 		FontDialog fntd = new FontDialog();
 		public FontConverter fcv = new FontConverter();
-		public string snipfile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "snippets.txt");
+		public string snipfile = AppPaths.SnippetsFile;
 		public bool Active;
 		#endregion
 		#region Button/Form/etc. events
 		public MoreConfigs()
 		{
+			AppPaths.MigrateLegacyFile("snippets.txt", snipfile);
 			InitializeComponent();
 		}
 		void MoreConfigs_Load(object sender, EventArgs e)
@@ -196,6 +197,7 @@ namespace Mahou
 				MMain.MyConfs.ReadInt("TTipUI", "Width"));
 			MMain.MyConfs.Write("DoubleKey", "Delay", nudDoubleDelay.Value.ToString());
 			MMain.MyConfs.Write("DoubleKey", "Use", cbDoublePress.Checked.ToString());
+			AppPaths.EnsureDataDirectory();
 			File.WriteAllText(snipfile, tbSnippets.Text);
 			KMHook.ReInitSnippets();
 			MMain.mahou.langDisplay.SetVisInvis();
@@ -261,6 +263,7 @@ namespace Mahou
 			cbDoublePress.Checked = MMain.MyConfs.ReadBool("DoubleKey", "Use");
 			cbOnChange.Checked = MMain.MyConfs.ReadBool("Functions", "DTTOnChange");
 			cbScrollLight.Checked = MMain.MyConfs.ReadBool("Functions", "ScrollTip");
+			AppPaths.MigrateLegacyFile("snippets.txt", snipfile);
 				if (File.Exists(snipfile)) {
 				tbSnippets.Text = File.ReadAllText(snipfile);
 				KMHook.ReInitSnippets();

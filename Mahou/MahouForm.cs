@@ -621,7 +621,9 @@ namespace Mahou
 		}
 		void CreateShortcut() //Creates startup shortcut v2.0, now not uses com. So whole project not need the Windows SDK :p
 		{
-			var exelocation = Assembly.GetExecutingAssembly().Location;
+			var exelocation = Environment.ProcessPath;
+			if (String.IsNullOrEmpty(exelocation))
+				exelocation = Application.ExecutablePath;
 			var shortcutLocation = System.IO.Path.Combine(
 				                       Environment.GetFolderPath(Environment.SpecialFolder.Startup),
 				                       "Mahou.lnk");
@@ -633,7 +635,7 @@ namespace Mahou
 				var lnk = shell.CreateShortcut(shortcutLocation);
 				try {
 					lnk.TargetPath = exelocation;
-					lnk.WorkingDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+					lnk.WorkingDirectory = System.IO.Path.GetDirectoryName(exelocation);
 					lnk.IconLocation = exelocation + ", 0";
 					lnk.Description = "Mahou - Magick layout switcher";
 					lnk.Save();
