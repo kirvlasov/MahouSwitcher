@@ -22,7 +22,6 @@ namespace Mahou {
             fileTarget.ArchiveAboveSize = 1024 * 1024;
             fileTarget.MaxArchiveFiles = 7;
             fileTarget.KeepFileOpen = false;
-            fileTarget.ConcurrentWrites = true;
 
             LoggingRule rule2;
 #if DEBUG

@@ -47,6 +47,7 @@ namespace Mahou {
 				if(locales.Length < 2) {
 					Locales.IfLessThan2();
 				} else {
+					Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
 					Application.EnableVisualStyles();
 					Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f));
 					Application.SetCompatibleTextRenderingDefault(false);

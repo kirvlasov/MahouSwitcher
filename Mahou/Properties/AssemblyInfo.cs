@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Resources;
 
 // Управление общими сведениями о сборке осуществляется с помощью 
@@ -14,6 +15,7 @@ using System.Resources;
 [assembly: AssemblyCopyright ("Copyright © BladeMight 2016")]
 [assembly: AssemblyTrademark ("BM")]
 [assembly: AssemblyCulture ("")]
+[assembly: SupportedOSPlatform("windows10.0.17763")]
 // Параметр ComVisible со значением FALSE делает типы в сборке невидимыми 
 // для COM-компонентов.  Если требуется обратиться к типу в этой сборке через 
 // COM, задайте атрибуту ComVisible значение TRUE для этого типа.
