@@ -41,6 +41,7 @@ namespace Mahou {
 			hotkeywithmodsfired, csdoing, incapt, waitfornum;
 		static List<Keys> tempNumpads = new List<Keys>();
 		static List<char> c_snip = new List<char>();
+		const long MaxSnippetsFileBytes = 1024 * 1024;
 		public static System.Windows.Forms.Timer doublekey = new System.Windows.Forms.Timer();
 		public delegate IntPtr LowLevelProc(int nCode, IntPtr wParam, IntPtr lParam);
 		public static string[] snipps = new[] { "mahou", "eml" };
@@ -253,13 +254,14 @@ namespace Mahou {
 						}
 						ToUnicodeEx((uint)vkCode, (uint)vkCode, by, stb, stb.Capacity, 0, (IntPtr)Locales.GetCurrentLocale());
 						//				Console.WriteLine(stb.ToString()[0]);
-						c_snip.Add(stb.ToString()[0]);
+						var chars = stb.ToString();
+						if(!String.IsNullOrEmpty(chars)) {
+							c_snip.Add(chars[0]);
+							TrimSnippetBuffer();
+						}
 					}
 					if(wParam == (IntPtr)(int)KMMessages.WM_KEYUP && Key == Keys.Space) {
-						var snip = "";
-						foreach(var ch in c_snip) {
-							snip += ch;
-						}
+						var snip = new string(c_snip.ToArray());
 						//				Console.WriteLine(snip);
 						for(int i = 0; i < snipps.Length; i++) {
 							//					Console.WriteLine("!Current is = " + snipps[i]);
@@ -279,7 +281,7 @@ namespace Mahou {
 									KInputs.MakeInput(KInputs.AddString(exps[i]));
 								} catch {
 									// If not use TASK, form won't accept the keys(Enter/Escape/Alt+F4).
-									var tsk = new Task(() => MessageBox.Show(MMain.Msgs[10], MMain.Msgs[11], MessageBoxButtons.OK, MessageBoxIcon.Error));
+									var tsk = new Task(() => MessageBox.Show(Translation.Message(MessageText.SnippetsConfiguredWrong), Translation.Message(MessageText.SnippetsErrorTitle), MessageBoxButtons.OK, MessageBoxIcon.Error));
 									tsk.Start();
 									KInputs.MakeInput(KInputs.AddString(snip));
 								}
@@ -905,7 +907,7 @@ namespace Mahou {
 		{
 			//Do not remove this line, it needed for "Left Control Switch Layout" to work properly
 			Thread.Sleep(15);
-			keybd_event((byte)key, 0, flags | (KInputs.IsExtended(key) ? 1 : 0), 0);
+			NativeKeybdEvent((byte)key, 0, (uint)(flags | (KInputs.IsExtended(key) ? 1 : 0)), UIntPtr.Zero);
 		}
 		static void RePressAfter(string mods) // Sets Press Again variables for modifiers
 		{
@@ -955,7 +957,16 @@ namespace Mahou {
 			SendModsUp(mods);
 		}
 		public static void ReInitSnippets() {
+			AppPaths.MigrateLegacyFile("snippets.txt", MMain.mahou.moreConfigs.snipfile);
 			if(System.IO.File.Exists(MMain.mahou.moreConfigs.snipfile)) {
+				var snippetsFile = new System.IO.FileInfo(MMain.mahou.moreConfigs.snipfile);
+				if(snippetsFile.Length > MaxSnippetsFileBytes) {
+					log.Warn("Snippets file skipped because it is larger than the allowed limit.");
+					snipps = new string[0];
+					exps = new string[0];
+					c_snip.Clear();
+					return;
+				}
 				var snippets = System.IO.File.ReadAllText(MMain.mahou.moreConfigs.snipfile);
 				var snili = new List<string>();
 				var expli = new List<string>();
@@ -971,12 +982,27 @@ namespace Mahou {
 					//					Console.WriteLine(noRN);
 					expli.Add(noRN);
 				}
-				snipps = snili.ToArray();
+				if(snili.Count != expli.Count) {
+					log.Warn("Snippets file has malformed pairs. Only complete pairs were loaded.");
+				}
+				var completePairs = Math.Min(snili.Count, expli.Count);
+				snipps = snili.Take(completePairs).ToArray();
 				//				Console.WriteLine(snipps[0]);
 				//				Console.WriteLine(snili.ToArray()[0]);
-				exps = expli.ToArray();
+				exps = expli.Take(completePairs).ToArray();
 				//				Console.WriteLine(exps[0]);
 				//				Console.WriteLine(expli.ToArray()[0]);
+				TrimSnippetBuffer();
+			}
+		}
+		static void TrimSnippetBuffer() {
+			var maxTriggerLength = snipps.Length == 0 ? 0 : snipps.Max(s => s == null ? 0 : s.Length);
+			if(maxTriggerLength == 0) {
+				c_snip.Clear();
+				return;
+			}
+			while(c_snip.Count > maxTriggerLength) {
+				c_snip.RemoveAt(0);
 			}
 		}
 		public struct YuKey // YuKey is struct of key and it state(upper/lower) AND if it is Alt+[NumPad]
@@ -988,8 +1014,8 @@ namespace Mahou {
 		}
 		#endregion
 		#region DLL imports
-		[DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-		public static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int extraInfo);
+		[DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true, EntryPoint = "keybd_event")]
+		static extern void NativeKeybdEvent(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
 
 		[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
 		public static extern IntPtr SetWindowsHookEx(int idHook,
@@ -1006,9 +1032,13 @@ namespace Mahou {
 		[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
 		public static extern IntPtr GetModuleHandle(string lpModuleName);
 
+		public static bool PostMessage(IntPtr hhwnd, uint msg, uint wparam, uint lparam) {
+			return NativePostMessage(hhwnd, msg, new IntPtr(wparam), new IntPtr(lparam));
+		}
+
 		[return: MarshalAs(UnmanagedType.Bool)]
-		[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-		public static extern bool PostMessage(IntPtr hhwnd, uint msg, uint wparam, uint lparam);
+		[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true, EntryPoint = "PostMessage")]
+		static extern bool NativePostMessage(IntPtr hhwnd, uint msg, IntPtr wparam, IntPtr lparam);
 
 		[DllImport("user32.dll", CharSet = CharSet.Unicode, ExactSpelling = true)]
 		private static extern int ToUnicodeEx(uint wVirtKey, uint wScanCode, byte[] lpKeyState,

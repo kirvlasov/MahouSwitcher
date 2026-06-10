@@ -8,20 +8,20 @@ namespace Mahou
         public event EventHandler<EventArgs> Exit;
         public event EventHandler<EventArgs> ShowHide;
         public NotifyIcon trIcon;
-        ContextMenu cMenu;
-        MenuItem Exi, ShHi;
+        ContextMenuStrip cMenu;
+        ToolStripMenuItem Exi, ShHi;
         public TrayIcon(bool? visible = true)
         {
             trIcon = new NotifyIcon();
-            cMenu = new ContextMenu();
+            cMenu = new ContextMenuStrip();
             trIcon.Icon = Properties.Resources.MahouTrayHD;
             trIcon.Visible = visible == true;
-            Exi = new MenuItem("Exit", ExitHandler);
-            ShHi = new MenuItem("Show/Hide", ShowHideHandler);
-            cMenu.MenuItems.Add(ShHi);
-            cMenu.MenuItems.Add(Exi);
+            Exi = new ToolStripMenuItem("Exit", null, ExitHandler);
+            ShHi = new ToolStripMenuItem("Show/Hide", null, ShowHideHandler);
+            cMenu.Items.Add(ShHi);
+            cMenu.Items.Add(Exi);
             trIcon.Text = "Mahou (魔法)\nA magical layout switcher.";
-            trIcon.ContextMenu = cMenu;
+            trIcon.ContextMenuStrip = cMenu;
             trIcon.MouseDoubleClick += ShowHideHandler;
             trIcon.BalloonTipClicked += ExitHandler;
         }

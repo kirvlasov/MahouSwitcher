@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="UI_AutostartWithWindows" xml:space="preserve">
+    <value>Автозапуск с Windows</value>
+  </data>
+  <data name="UI_Hotkeys" xml:space="preserve">
+    <value>Горячие клавиши</value>
+  </data>
+  <data name="UI_ConvertWord" xml:space="preserve">
+    <value>Конверт слова</value>
+  </data>
+  <data name="UI_ConvertSelection" xml:space="preserve">
+    <value>Конверт выделения</value>
+  </data>
+  <data name="UI_ConvertLine" xml:space="preserve">
+    <value>Конверт линии</value>
+  </data>
+  <data name="UI_CsSwitch" xml:space="preserve">
+    <value>КВ-Ключ</value>
+  </data>
+  <data name="UI_RePress" xml:space="preserve">
+    <value>Пере-наж.</value>
+  </data>
+  <data name="UI_ReSelect" xml:space="preserve">
+    <value>Пере-выдел.</value>
+  </data>
+  <data name="UI_SwitchLayoutByKey" xml:space="preserve">
+    <value>Сменить язык клавишой:</value>
+  </data>
+  <data name="UI_BlockCtrl" xml:space="preserve">
+    <value>Игнор. CTRL</value>
+  </data>
+  <data name="UI_TrayIcon" xml:space="preserve">
+    <value>Иконка трея</value>
+  </data>
+  <data name="UI_CycleMode" xml:space="preserve">
+    <value>Циклч. режим</value>
+  </data>
+  <data name="UI_Emu" xml:space="preserve">
+    <value>Эму</value>
+  </data>
+  <data name="UI_SwitchBetweenLayouts" xml:space="preserve">
+    <value>Конверт между языками</value>
+  </data>
+  <data name="UI_Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="UI_Apply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="UI_Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="UI_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="UI_Help" xml:space="preserve">
+    <value>Помощь</value>
+  </data>
+  <data name="UI_UseSpecificLayoutChangingByLeftRightCtrls" xml:space="preserve">
+    <value>Использовать спец. переключение по L/R CTRL</value>
+  </data>
+  <data name="UI_LCtrlSwitchesTo" xml:space="preserve">
+    <value>LCtrl переключает в:</value>
+  </data>
+  <data name="UI_RCtrlSwitchesTo" xml:space="preserve">
+    <value>RCtrl переключает в:</value>
+  </data>
+  <data name="UI_MoreConfigs" xml:space="preserve">
+    <value>Дополнительные настройки</value>
+  </data>
+  <data name="UI_SymbolIgnore" xml:space="preserve">
+    <value>Игнор. символов:</value>
+  </data>
+  <data name="UI_MoreTries" xml:space="preserve">
+    <value>Больше попыток:</value>
+  </data>
+  <data name="UI_TrayShowHide" xml:space="preserve">
+    <value>Показать/Скрыть</value>
+  </data>
+  <data name="UI_TrayExit" xml:space="preserve">
+    <value>Выход</value>
+  </data>
+  <data name="UI_TrayDescription" xml:space="preserve">
+    <value>Mahou (魔法)
+Волшебный переключатель раскладок.</value>
+  </data>
+  <data name="UI_DisplayLanguage" xml:space="preserve">
+    <value>Отображ. язык:</value>
+  </data>
+  <data name="UI_RefreshRateMs" xml:space="preserve">
+    <value>Скор. обнов.(мс):</value>
+  </data>
+  <data name="UI_Colors" xml:space="preserve">
+    <value>Цвета:</value>
+  </data>
+  <data name="UI_Font" xml:space="preserve">
+    <value>Шрифт</value>
+  </data>
+  <data name="UI_Size" xml:space="preserve">
+    <value>Размер:</value>
+  </data>
+  <data name="UI_Position" xml:space="preserve">
+    <value>Позиция:</value>
+  </data>
+  <data name="UI_More" xml:space="preserve">
+    <value>Еще</value>
+  </data>
+  <data name="UI_Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="UI_DoubleHotkey" xml:space="preserve">
+    <value>Двойные гор. клавиши:</value>
+  </data>
+  <data name="UI_Delay" xml:space="preserve">
+    <value>Ожидание:</value>
+  </data>
+  <data name="UI_ExperimentalCsSwitchPlus" xml:space="preserve">
+    <value>Экспериментальный КВ-Ключ+</value>
+  </data>
+  <data name="UI_TransparentBackgroundInLanguageTooltip" xml:space="preserve">
+    <value>Прозрачный фон в подсказке языка</value>
+  </data>
+  <data name="UI_UseSnippets" xml:space="preserve">
+    <value>Использовать сниппеты</value>
+  </data>
+  <data name="UI_OnChange" xml:space="preserve">
+    <value>При смене</value>
+  </data>
+  <data name="UI_HighlightScrollLockWhenLanguage1Active" xml:space="preserve">
+    <value>Подсвечивать ScrollLock когда язык 1 активен.</value>
+  </data>
+  <data name="UI_ConvertMultipleWordsHotkey" xml:space="preserve">
+    <value>Конверт нескольких последних слов гор. клав.:</value>
+  </data>
+  <data name="ToolTip_CycleMode" xml:space="preserve">
+    <value>Пока включена, [Конверт слова] and [Конверт линии] and [Конверт выделения с &quot;КВ-Ключ&quot; включенной]
+будет переключать раскладку циклично, вместо переключения между выбранными в настройках.
+Этот режим работает с бОльшим количеством програм.
+Если есть программа в которой [Конверт слова] или [Конверт линии] или [Конверт выделения с &quot;КВ-Ключ&quot; включенной] не работают,
+то попробуйте включить эту функцию.
+Если у вас только 2 раскладки ОЧЕНЬ РЕКОМЕНДУЕТСЯ включить ее, и &quot;Эму&quot;.</value>
+  </data>
+  <data name="ToolTip_ConvertWordHotkey" xml:space="preserve">
+    <value>Текущая горячая клавиша для &quot;Конверт слова&quot;.
+Нажмите любую клавишу чтобы назначить её, или клавишу с модификаторами(ALT,CTRL,SHIFT).</value>
+  </data>
+  <data name="ToolTip_ConvertSelectionHotkey" xml:space="preserve">
+    <value>Текущая горячая клавиша для &quot;Конверт выделения&quot;.
+Нажмите любую клавишу чтобы назначить её, или клавишу с модификаторами(ALT,CTRL,SHIFT).</value>
+  </data>
+  <data name="ToolTip_ConvertLineHotkey" xml:space="preserve">
+    <value>Текущая горячая клавиша для &quot;Конверт линии&quot;.
+Нажмите любую клавишу чтобы назначить её, или клавишу с модификаторами(ALT,CTRL,SHIFT).</value>
+  </data>
+  <data name="ToolTip_TrayIcon" xml:space="preserve">
+    <value>Переключает видимость иконки в трее.
+Если скрыта то чтобы показать главное окно нажмите CTRL+ALT+SHIFT+INSERT или просто запустите Mahou.exe опять.</value>
+  </data>
+  <data name="ToolTip_BlockCtrl" xml:space="preserve">
+    <value>Игнорирует горячую клавишу которая использует Control,
+когда &quot;Сменить язык клавишой&quot; установлен на Left/Right Control.</value>
+  </data>
+  <data name="ToolTip_SwitchLayoutKeys" xml:space="preserve">
+    <value>Тип переключения зависит от &quot;Циклч. режим&quot; и &quot;Эму&quot;.</value>
+  </data>
+  <data name="ToolTip_EmulateLayoutSwitch" xml:space="preserve">
+    <value>Если включеня, Циклч. режим будет испльзовать Эмуляцию нажатия Alt+Shift/Win+Space вместо &quot;посылания сообщения окну&quot; которое переключает раскладку.</value>
+  </data>
+  <data name="ToolTip_CsSwitch" xml:space="preserve">
+    <value>Если включена, Конверт выделения будет использовать переключение раскладки.
+Все символы будут написаны как надо.(нет проблем с символами)</value>
+  </data>
+  <data name="ToolTip_SwitchBetweenLayouts" xml:space="preserve">
+    <value>Работает только если Циклч. режим выключен.</value>
+  </data>
+  <data name="ToolTip_RePress" xml:space="preserve">
+    <value>Если включена, модификаторы будут нажаты снова после конвертации.
+Благодаря новому типу горячих клавиш, модификаторы не залипнут НИКОГДА(рекомендуется).</value>
+  </data>
+  <data name="ToolTip_EatOneSpace" xml:space="preserve">
+    <value>Если включена, нажатие ОДНОГО Space ПОСЛЕ слова не очистит полседнее слово.</value>
+  </data>
+  <data name="ToolTip_ReSelect" xml:space="preserve">
+    <value>Если включена, текст будет снова выделен после &quot;Конверт выделения&quot;.</value>
+  </data>
+  <data name="ToolTip_EmuType" xml:space="preserve">
+    <value>Выберите тип эмуляции переключения раскладки.
+Win+Space работает только в Windows 10!!
+Win+Space также в Metro приложениях работает лучше чем Alt+Shift.</value>
+  </data>
+  <data name="ToolTip_LCtrlSpecificLayout" xml:space="preserve">
+    <value>Нажатие LCtrl переключит раскладку в выбраную.</value>
+  </data>
+  <data name="ToolTip_RCtrlSpecificLayout" xml:space="preserve">
+    <value>Pressing RCtrl переключит раскладку в выбраную.</value>
+  </data>
+  <data name="ToolTip_UseSpecificLayoutChanging" xml:space="preserve">
+    <value>Включение этой функции отключает LCtrl/RCtrl из &quot;Сменить язык клавишой&quot;.
+Пока включена, нажатие LCtrl/RCtrl будет переключать раскладку в выдбраную.</value>
+  </data>
+  <data name="ToolTip_EmuTypeTitle" xml:space="preserve">
+    <value>Тип эмуляции</value>
+  </data>
+  <data name="ToolTip_SymbolIgnore" xml:space="preserve">
+    <value>Если включен, символы []{};&apos;:&quot;,./&lt;&gt;? будут игнорироваться и не будут конвертированы.
+Работает в Конверт слова, Конверт линии, Конверт выделения с Циклч. режим и КВ-Ключ включенными.
+Не будет работатб если у вас &gt;2 раскладок и Циклч. режим включен!</value>
+  </data>
+  <data name="ToolTip_MoreTries" xml:space="preserve">
+    <value>Включает несколько попыток взятия выделенного текста в Конверт выделения.</value>
+  </data>
+  <data name="ToolTip_DisplayLanguage" xml:space="preserve">
+    <value>Если включено, то при наведении мыши на текстовую форму будет показана маленькая подсказка о текущем языке ввода.</value>
+  </data>
+  <data name="ToolTip_RefreshRate" xml:space="preserve">
+    <value>Скорость проверки курсора мыши.(равен ли он &quot;I&quot;, при наведении на текст/текстовую форму))</value>
+  </data>
+  <data name="ToolTip_Colors" xml:space="preserve">
+    <value>Цвета и шрифт маленькой подсказки.(Слева - цвет текста, Справав - цвет фона)</value>
+  </data>
+  <data name="ToolTip_Size" xml:space="preserve">
+    <value>Размер подсказки языка возле курсора.</value>
+  </data>
+  <data name="ToolTip_Position" xml:space="preserve">
+    <value>Позиция относительно позиции курсора.</value>
+  </data>
+  <data name="ToolTip_DoubleHotkey" xml:space="preserve">
+    <value>Включает возможность двойных горячих клавиш,
+и возможность назначить только модификатор на горячую клавишу</value>
+  </data>
+  <data name="ToolTip_DoubleHotkeyDelay" xml:space="preserve">
+    <value>Время ожидания второго нажатия(мс)</value>
+  </data>
+  <data name="ToolTip_ExperimentalCsSwitchPlus" xml:space="preserve">
+    <value>Совмещает некоторые возможности Конверт выделения с КВ-Ключ включенным и когда выключен.(Для работы включите КВ-Ключ)
+Возможности:
+1.Конвертирование из разных языков за 1 конверт.
+2.Игнор. символов работает здесь.
+3.Авто-распознование языка текста(не все символы(те которые есть в обеих раскладках) могут быть распознаны правильно если выбран неправильный язык изначально)
+4.Возможность конвертирование символов которые есть в обеих раскладках по разному если менять язык перед конвертацией.</value>
+  </data>
+  <data name="ToolTip_TransparentBackground" xml:space="preserve">
+    <value>Делает фон подсказки языка прозрачным.
+Не забудьте поменять цвет текста.(т.к. &quot;Белый&quot; по умолчанию)
+Некоторые шрифты могут выглядеть не очень, попробуйте поменять шрифт.(&quot;Georgia&quot; или &quot;Palatino Linotype&quot; рекоммендуется)</value>
+  </data>
+  <data name="ToolTip_UseSnippets" xml:space="preserve">
+    <value>Если включено, нажатие Space превратит маленькое (то что начинается с &quot;-&gt;&quot;) слово, в большое(то что между &quot;====&gt;&quot; и &quot;&lt;====&quot;) слово/кусок текста.</value>
+  </data>
+  <data name="ToolTip_OnChange" xml:space="preserve">
+    <value>Показывает подсказку только при смене языка.
+Время отображения = 7x[Скор. обнов.].</value>
+  </data>
+  <data name="ToolTip_ScrollLockHighlight" xml:space="preserve">
+    <value>Подсвечивает лампочку Scroll Lock при активации языка 1, выбранного в главном окне.</value>
+  </data>
+  <data name="ToolTip_ConvertMultipleWords" xml:space="preserve">
+    <value>Позволяет конвертировать выбранное количество последних слов нажатием горячей клавиши, а потом 1-9 на клавиатуре.</value>
+  </data>
+  <data name="Message_Help" xml:space="preserve">
+    <value>Нажмите Pause(по умолчанию) для конвертации последнего введенного слова.
+Нажмите Scroll(по умолчанию) пока выделенный текс в фокусе чтобы конвертивровать его.
+Нажмите Shift+Pause(по умолчанию) для конвертации последней введенной линии.
+Нажмите Ctrl+Alt+Shift+Insert чтобы показать/скрыть главное окно.
+Нажмите Ctrl+Alt+Shift+F12 чтобы завершить Mahou.
+
+*Заметьте что если you вводите текст не из выбранных раскладок в настройках, то конвертация конвертирует текст в Язык 1(Не актуально если включен Циклич. режим).
+
+**Если у Вас проблемы с символами при Конвертации выделения попробуйте &quot;перключить языки местами(1=&gt;2 &amp; 2=&gt;1)&quot; или включите &quot;КВ-Ключ&quot;.
+
+Наведите мышь на любой элемент главного онка чтобы узнать подробнее о нем.
+
+************WINDOWS 10 Metro приложения************
+Включите &quot;Циклч. режим&quot;, &quot;Эму&quot; и установите тип эмуляции на&quot;Win+Space&quot; эти настройки работают лучше для Metro приложений.
+
+Для Mahou.ini in Mahou folder.
+
+Удачи.</value>
+  </data>
+  <data name="Message_AttentionTitle" xml:space="preserve">
+    <value>****ВНИМАНИЕ****</value>
+  </data>
+  <data name="Message_DuplicateConvertWordLineHotkeys" xml:space="preserve">
+    <value>Вы установили одну и ту же горячую клавишу для Конверт слова и Конверт линии, это невозможно!!</value>
+  </data>
+  <data name="Message_WarningTitle" xml:space="preserve">
+    <value>Внимание!</value>
+  </data>
+  <data name="Message_ConvertWordHotkeyModifiersOnly" xml:space="preserve">
+    <value>Вы нажали только модификаторы для Конверт слова!!</value>
+  </data>
+  <data name="Message_ConvertSelectionHotkeyModifiersOnly" xml:space="preserve">
+    <value>Вы нажали только модификаторы для Конверт выделения!!</value>
+  </data>
+  <data name="Message_ConvertLineHotkeyModifiersOnly" xml:space="preserve">
+    <value>Вы нажали только модификаторы для Конверт линии!!</value>
+  </data>
+  <data name="Message_SelectedLocalesRemoved" xml:space="preserve">
+    <value>Вы убрали выбранные ранее раскладки, выберите заново.</value>
+  </data>
+  <data name="Message_SnippetsConfiguredWrong" xml:space="preserve">
+    <value>Сниппеты настроены не правильно...</value>
+  </data>
+  <data name="Message_SnippetsErrorTitle" xml:space="preserve">
+    <value>Mahou ошибка сниппетов!</value>
+  </data>
+  <data name="Message_CapsLockSwitchOnlyWarning" xml:space="preserve">
+    <value>Использование CapsLock в горячей клавише с CapsLock назначенным на [Сменить язык клавишей] вызовет проблемы, отключите или переключите на другую клавишу функцию [Сменить язык клавишей].</value>
+  </data>
+  <data name="Message_CapsLockWarningTitle" xml:space="preserve">
+    <value>Внимание клавиша с CapsLock!</value>
+  </data>
+</root>

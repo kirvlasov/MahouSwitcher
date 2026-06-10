@@ -32,14 +32,13 @@
       <!-- Если приложение предназначено для работы с Windows 7, раскомментируйте следующий узел supportedOS-->
       <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
 
-      <!-- Если приложение предназначено для работы с Windows 8, снимите комментарий со следующего узла supportedOS-->
-      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+      <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}"/>
       
     </application>
   </compatibility>
-  
+
   <!-- Включите темы для общих элементов управления и диалоговых окон Windows (Windows XP и более поздние версии) -->
-  <!-- <dependency>
+  <dependency>
     <dependentAssembly>
       <assemblyIdentity
           type="win32"
@@ -50,6 +49,6 @@
           language="*"
         />
     </dependentAssembly>
-  </dependency>-->
+  </dependency>
 
 </asmv1:assembly>

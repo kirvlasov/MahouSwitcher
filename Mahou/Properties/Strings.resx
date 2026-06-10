@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="UI_AutostartWithWindows" xml:space="preserve">
+    <value>Autostart with Windows</value>
+  </data>
+  <data name="UI_Hotkeys" xml:space="preserve">
+    <value>Hotkeys</value>
+  </data>
+  <data name="UI_ConvertWord" xml:space="preserve">
+    <value>Convert word</value>
+  </data>
+  <data name="UI_ConvertSelection" xml:space="preserve">
+    <value>Convert selection</value>
+  </data>
+  <data name="UI_ConvertLine" xml:space="preserve">
+    <value>Convert line</value>
+  </data>
+  <data name="UI_CsSwitch" xml:space="preserve">
+    <value>CS-Switch</value>
+  </data>
+  <data name="UI_RePress" xml:space="preserve">
+    <value>Re-Press</value>
+  </data>
+  <data name="UI_ReSelect" xml:space="preserve">
+    <value>Re-Select</value>
+  </data>
+  <data name="UI_SwitchLayoutByKey" xml:space="preserve">
+    <value>Switch layout by key:</value>
+  </data>
+  <data name="UI_BlockCtrl" xml:space="preserve">
+    <value>Block CTRL</value>
+  </data>
+  <data name="UI_TrayIcon" xml:space="preserve">
+    <value>Tray icon</value>
+  </data>
+  <data name="UI_CycleMode" xml:space="preserve">
+    <value>Cycle Mode</value>
+  </data>
+  <data name="UI_Emu" xml:space="preserve">
+    <value>Emu</value>
+  </data>
+  <data name="UI_SwitchBetweenLayouts" xml:space="preserve">
+    <value>Switch between layouts</value>
+  </data>
+  <data name="UI_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="UI_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="UI_Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="UI_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="UI_Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="UI_UseSpecificLayoutChangingByLeftRightCtrls" xml:space="preserve">
+    <value>Use specific layout changing by Left/Right CTRLS</value>
+  </data>
+  <data name="UI_LCtrlSwitchesTo" xml:space="preserve">
+    <value>LCtrl switches to:</value>
+  </data>
+  <data name="UI_RCtrlSwitchesTo" xml:space="preserve">
+    <value>RCtrl switches to:</value>
+  </data>
+  <data name="UI_MoreConfigs" xml:space="preserve">
+    <value>More configs</value>
+  </data>
+  <data name="UI_SymbolIgnore" xml:space="preserve">
+    <value>Symbol Ignore:</value>
+  </data>
+  <data name="UI_MoreTries" xml:space="preserve">
+    <value>More Tries:</value>
+  </data>
+  <data name="UI_TrayShowHide" xml:space="preserve">
+    <value>Show/Hide</value>
+  </data>
+  <data name="UI_TrayExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="UI_TrayDescription" xml:space="preserve">
+    <value>Mahou (魔法)
+A magical layout switcher.</value>
+  </data>
+  <data name="UI_DisplayLanguage" xml:space="preserve">
+    <value>Display language:</value>
+  </data>
+  <data name="UI_RefreshRateMs" xml:space="preserve">
+    <value>Refresh rate(ms):</value>
+  </data>
+  <data name="UI_Colors" xml:space="preserve">
+    <value>Colors:</value>
+  </data>
+  <data name="UI_Font" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="UI_Size" xml:space="preserve">
+    <value>Size:</value>
+  </data>
+  <data name="UI_Position" xml:space="preserve">
+    <value>Position:</value>
+  </data>
+  <data name="UI_More" xml:space="preserve">
+    <value>More</value>
+  </data>
+  <data name="UI_Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="UI_DoubleHotkey" xml:space="preserve">
+    <value>Double hotkey:</value>
+  </data>
+  <data name="UI_Delay" xml:space="preserve">
+    <value>Delay:</value>
+  </data>
+  <data name="UI_ExperimentalCsSwitchPlus" xml:space="preserve">
+    <value>Experimental CS-Switch+</value>
+  </data>
+  <data name="UI_TransparentBackgroundInLanguageTooltip" xml:space="preserve">
+    <value>Transparent background in language tooltip</value>
+  </data>
+  <data name="UI_UseSnippets" xml:space="preserve">
+    <value>Use snippets</value>
+  </data>
+  <data name="UI_OnChange" xml:space="preserve">
+    <value>On change</value>
+  </data>
+  <data name="UI_HighlightScrollLockWhenLanguage1Active" xml:space="preserve">
+    <value>Highlight ScrollLock when language 1 is active.</value>
+  </data>
+  <data name="UI_ConvertMultipleWordsHotkey" xml:space="preserve">
+    <value>Convert multiple words hotkey:</value>
+  </data>
+  <data name="ToolTip_CycleMode" xml:space="preserve">
+    <value>While this option enabled, [Convert word] and [Convert line] and [Convert selection with &quot;CS-Switch&quot; enabled]
+will just cycle between all locales instead of switching between selected in settings.
+This mode works for almost all programs.
+If there is program in which [Convert word] or [Convert line] or [Convert selection with &quot;CS-Switch&quot; enabled] not work,
+try with this option enabled.
+If you have just 2 layouts(input languages) it is HIGHLY RECOMMENDED to turn it ON, and &quot;Emu&quot; too to ON.</value>
+  </data>
+  <data name="ToolTip_ConvertWordHotkey" xml:space="preserve">
+    <value>This is current hotkey for &quot;Convert word&quot;.
+Press any key to assign it, or key with modifiers(ALT,CTRL,SHIFT).</value>
+  </data>
+  <data name="ToolTip_ConvertSelectionHotkey" xml:space="preserve">
+    <value>This is current hotkey for &quot;Convert selection&quot;.
+Press any key to assign it, or key with modifiers(ALT,CTRL,SHIFT).</value>
+  </data>
+  <data name="ToolTip_ConvertLineHotkey" xml:space="preserve">
+    <value>This is current hotkey for &quot;Convert line&quot;.
+Press any key to assign it, or key with modifiers(ALT,CTRL,SHIFT)</value>
+  </data>
+  <data name="ToolTip_TrayIcon" xml:space="preserve">
+    <value>Toggles visibility of icon in a tray.
+If it is hidden, to show configs window hit CTRL+ALT+SHIFT+INSERT or just run Mahou.exe again.</value>
+  </data>
+  <data name="ToolTip_BlockCtrl" xml:space="preserve">
+    <value>Blocks hotkeys that use Control,
+when &quot;Switch layout by key&quot; is set to Left/Right Control.</value>
+  </data>
+  <data name="ToolTip_SwitchLayoutKeys" xml:space="preserve">
+    <value>Switching layout depends on &quot;Cycle Mode&quot; &amp; &quot;Emu&quot; options.</value>
+  </data>
+  <data name="ToolTip_EmulateLayoutSwitch" xml:space="preserve">
+    <value>If this option enabled, Cycle Mode will use Emulation of Alt+Shift/Win+Space instead &quot;sending window message&quot; that changes layout.</value>
+  </data>
+  <data name="ToolTip_CsSwitch" xml:space="preserve">
+    <value>If this option enabled, Covert selection will use layout switching.
+All characters will be rewriten as they must.(no problems with symbols
+There also an CS-Switch+ in More Configs page 2.</value>
+  </data>
+  <data name="ToolTip_SwitchBetweenLayouts" xml:space="preserve">
+    <value>Only works when Cycle Mode is OFF.</value>
+  </data>
+  <data name="ToolTip_RePress" xml:space="preserve">
+    <value>If enabled, modifiers will be repressed after conversion.
+Due to new hotkey managment modifiers NEVER stuck(recommenden).</value>
+  </data>
+  <data name="ToolTip_EatOneSpace" xml:space="preserve">
+    <value>If enabled, pressing ONE space AFTER word will not clear last word.</value>
+  </data>
+  <data name="ToolTip_ReSelect" xml:space="preserve">
+    <value>Enabling this, will reselect text after &quot;Convert selection&quot;.</value>
+  </data>
+  <data name="ToolTip_EmuType" xml:space="preserve">
+    <value>Select type for Emulate change layout.
+Win+Space works only in Windows 10!!
+Win+Space also will work better in Metro apps.</value>
+  </data>
+  <data name="ToolTip_LCtrlSpecificLayout" xml:space="preserve">
+    <value>Pressing LCtrl will switch layout to selected.</value>
+  </data>
+  <data name="ToolTip_RCtrlSpecificLayout" xml:space="preserve">
+    <value>Pressing RCtrl will switch layout to selected.</value>
+  </data>
+  <data name="ToolTip_UseSpecificLayoutChanging" xml:space="preserve">
+    <value>Enabling this will disable LCtrl/RCtrl from &quot;Switch layout by key&quot;.
+While this enabled pressing LCtrl/RCtrl will switch to specified layout.</value>
+  </data>
+  <data name="ToolTip_EmuTypeTitle" xml:space="preserve">
+    <value>Emu Type</value>
+  </data>
+  <data name="ToolTip_SymbolIgnore" xml:space="preserve">
+    <value>If enabled, symbols []{};&apos;:&quot;,./&lt;&gt;? will be ignored and will not be converted.
+Works in Convert word, Convert line, Convert selection with Cylce Mode and CS-Switch enabled.
+Won&apos;t work if you have &gt;2 layouts an Cycle Mode enabled!</value>
+  </data>
+  <data name="ToolTip_MoreTries" xml:space="preserve">
+    <value>Enables more tries to get selected text in Convert selection.</value>
+  </data>
+  <data name="ToolTip_DisplayLanguage" xml:space="preserve">
+    <value>If enabled, mouse cursor hovers text it will display a small tip of what langauge is now using.</value>
+  </data>
+  <data name="ToolTip_RefreshRate" xml:space="preserve">
+    <value>Speed of checking cursor type.(if it equals &quot;I&quot; )</value>
+  </data>
+  <data name="ToolTip_Colors" xml:space="preserve">
+    <value>Colors and font of small tip.(Left - foreground, Right - background)</value>
+  </data>
+  <data name="ToolTip_Size" xml:space="preserve">
+    <value>Size of language tooltip.</value>
+  </data>
+  <data name="ToolTip_Position" xml:space="preserve">
+    <value>Position relative to mouse position.</value>
+  </data>
+  <data name="ToolTip_DoubleHotkey" xml:space="preserve">
+    <value>Enables double hotkey ability,
+and makes it possible to set modifies to hotkey.</value>
+  </data>
+  <data name="ToolTip_DoubleHotkeyDelay" xml:space="preserve">
+    <value>Time to wait second hotkey press(ms)</value>
+  </data>
+  <data name="ToolTip_ExperimentalCsSwitchPlus" xml:space="preserve">
+    <value>Combines some abilities of Convert selection with enabled CS-Switch and when it disabled.(Enable CS-Switch for it to work)
+It can:
+1.Conversion from multiple languages at once.
+2.Ignore symbols feature work in it.
+3.Auto get language of text(not all symbols(the ones that exist in both layouts) can be rightly recognized if wrong layout selected from begin)
+4.Ability to convert symbols that exist in both layouts different if change layout before conversion.</value>
+  </data>
+  <data name="ToolTip_TransparentBackground" xml:space="preserve">
+    <value>Makes background of language tooltip transparent.
+Don&apos;t forget to change text color.(because &quot;White&quot; is default)
+Some fonts may look bad, try changing to another.(&quot;Georgia&quot; or &quot;Palatino Linotype&quot; is recommend)</value>
+  </data>
+  <data name="ToolTip_UseSnippets" xml:space="preserve">
+    <value>If this enabled, pressing Space will expand small (which starts with &quot;-&gt;&quot;) word, to big (which is between &quot;====&gt;&quot; and &quot;&lt;====&quot;) word/text fragment.</value>
+  </data>
+  <data name="ToolTip_OnChange" xml:space="preserve">
+    <value>Display language tooltip only on layout change.
+Time of displaying is 7x[Refresh rate].</value>
+  </data>
+  <data name="ToolTip_ScrollLockHighlight" xml:space="preserve">
+    <value>Highlight Scroll Lock when active language 1, selected in main window.</value>
+  </data>
+  <data name="ToolTip_ConvertMultipleWords" xml:space="preserve">
+    <value>Allow to convert specific last word count by pressing hotkey and then 1-9 on keyboard.</value>
+  </data>
+  <data name="Message_Help" xml:space="preserve">
+    <value>Press Pause(by Default) to convert last inputted word.
+Press Scroll(by Default) while selected text is focused to convert it.
+Press Shift+Pause(by Default) to convert last inputted line.
+Press Ctrl+Alt+Shift+Insert to show Mahou main window.
+Press Ctrl+Alt+Shift+F12 to shutdown Mahou.
+
+*Note that if you typing in not of selected in settings layouts(locales/languages), conversion will switch typed text to Language 1(Ignored if Cycle Mode is ON).
+
+**If you have problems with symbols conversion(selection) try &quot;switching languages (1=&gt;2 &amp; 2=&gt;1)&quot; or &quot;CS-Switch&quot; option.
+
+Hover on any control of main window for more info about it.
+
+************WINDOWS 10 USERS WHO USE METRO APPS************
+Enable &quot;Cycle Mode&quot;, &quot;Emu&quot; and set Emu type to &quot;Win+Space&quot; these settings work better for Metro apps.
+
+To reset settings just delete Mahou.ini in Mahou folder.
+
+Regards.</value>
+  </data>
+  <data name="Message_AttentionTitle" xml:space="preserve">
+    <value>****Attention****</value>
+  </data>
+  <data name="Message_DuplicateConvertWordLineHotkeys" xml:space="preserve">
+    <value>You have assigned same hotkeys for Convert word &amp; Convert line, that is impossible!!</value>
+  </data>
+  <data name="Message_WarningTitle" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="Message_ConvertWordHotkeyModifiersOnly" xml:space="preserve">
+    <value>You have pressed just modifiers for Convert word hotkey!!</value>
+  </data>
+  <data name="Message_ConvertSelectionHotkeyModifiersOnly" xml:space="preserve">
+    <value>You have pressed just modifiers for Convert selection hotkey!!</value>
+  </data>
+  <data name="Message_ConvertLineHotkeyModifiersOnly" xml:space="preserve">
+    <value>You have pressed just modifiers for Convert line hotkey!!</value>
+  </data>
+  <data name="Message_SelectedLocalesRemoved" xml:space="preserve">
+    <value>You have removed selected locales, reselect.</value>
+  </data>
+  <data name="Message_SnippetsConfiguredWrong" xml:space="preserve">
+    <value>Snippets configured wrong...</value>
+  </data>
+  <data name="Message_SnippetsErrorTitle" xml:space="preserve">
+    <value>Mahou snippets error!</value>
+  </data>
+  <data name="Message_CapsLockSwitchOnlyWarning" xml:space="preserve">
+    <value>Using CapsLock with CapsLock assigned as [Switch Only Key] will produce issues, disable [Switch Only Key] feature or assign it to another key.</value>
+  </data>
+  <data name="Message_CapsLockWarningTitle" xml:space="preserve">
+    <value>Hotkey with CapsLock warning!</value>
+  </data>
+</root>

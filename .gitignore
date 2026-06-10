@@ -1,7 +1,11 @@
 /Mahou/bin/*
 /Mahou/obj/*
+/Mahou/publish/*
 /Mahou/*.suo
 /Mahou/*.user
 /Mahou/.vs/*
+/Mahou/Mahou.ini
+/Mahou/snippets.txt
+/Mahou/logs/*
 
 packages

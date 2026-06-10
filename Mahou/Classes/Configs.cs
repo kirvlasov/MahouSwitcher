@@ -9,10 +9,12 @@ namespace Mahou
 {
     class Configs
     {
-        //Path where Mahou is now + Mahou.ini
-        public static readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Mahou.ini");
+        // Per-user config path. Legacy exe-directory Mahou.ini is migrated on first run.
+        public static readonly string filePath = AppPaths.ConfigFile;
         public Configs()//Initializes settings, if some of elements or settinhs file, not exists it creates them with default value
         {
+            AppPaths.MigrateLegacyFile("Mahou.ini", filePath);
+
             if (!File.Exists(filePath)) //Create an UTF-16 configuration file
             {
                 File.WriteAllText(filePath, "!Unicode(✔), Mahou settings file", Encoding.Unicode);

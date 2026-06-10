@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
@@ -29,15 +30,12 @@ namespace Mahou {
 		public static Configs MyConfs = new Configs();
 		public static MahouForm mahou;
 		public static List<string> lcnmid = new List<string>();
-		public static string[] UI = { };
-		public static string[] TTips = { };
-		public static string[] Msgs = { };
 		#endregion
 		[STAThread] //DO NOT REMOVE THIS
 		public static void Main(string[] args) {
 			LogHelper.ConfigureNlog();
 			log.Trace("Program start");
-			using(var mutex = new Mutex(false, "Global\\" + appGUid)) {
+			using(var mutex = new Mutex(false, "Local\\" + appGUid)) {
 				log.Trace("Mutex created");
 				if(!mutex.WaitOne(0, false)) {
 					KMHook.PostMessage((IntPtr)0xffff, ao, 0, 0);
@@ -46,12 +44,15 @@ namespace Mahou {
 				if(locales.Length < 2) {
 					Locales.IfLessThan2();
 				} else {
+					Application.SetHighDpiMode(HighDpiMode.PerMonitorV2);
+					Application.EnableVisualStyles();
+					Application.SetDefaultFont(new Font("Microsoft Sans Serif", 8.25f));
+					Application.SetCompatibleTextRenderingDefault(false);
 					mahou = new MahouForm();
 					InitLanguage();
 					//Refreshes icon text language at startup
-					mahou.icon.RefreshText(MMain.UI[44], MMain.UI[42], MMain.UI[43]);
+					mahou.icon.RefreshText(Translation.UI(UiText.TrayDescription), Translation.UI(UiText.TrayShowHide), Translation.UI(UiText.TrayExit));
 					KMHook.ReInitSnippets();
-					Application.EnableVisualStyles(); // Huh i did not noticed that it was missing... '~'
 					StartHook();
 					//for first run, add your locale 1 & locale 2 to settings
 					if(MyConfs.Read("Locales", "locale1Lang") == "" && MyConfs.Read("Locales", "locale2Lang") == "") {
@@ -71,15 +72,11 @@ namespace Mahou {
 			}
 		}
 		public static void InitLanguage() {
-			if(MyConfs.Read("Locales", "LANGUAGE") == "RU") {
-				UI = Translation.UIRU;
-				TTips = Translation.ToolTipsRU;
-				Msgs = Translation.MessagesRU;
-			} else if(MyConfs.Read("Locales", "LANGUAGE") == "EN") {
-				UI = Translation.UIEN;
-				TTips = Translation.ToolTipsEN;
-				Msgs = Translation.MessagesEN;
+			var languageCode = Translation.NormalizeLanguageCode(MyConfs.Read("Locales", "LANGUAGE"));
+			if(languageCode != MyConfs.Read("Locales", "LANGUAGE")) {
+				MyConfs.Write("Locales", "LANGUAGE", languageCode);
 			}
+			Translation.SetLanguage(languageCode);
 		}
 		#region Actions with hooks
 		public static void StartHook() {

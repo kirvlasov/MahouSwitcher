@@ -5,6 +5,7 @@ using NLog.Targets;
 namespace Mahou {
     internal class LogHelper {
         public static void ConfigureNlog() {         // Step 1. Create configuration object 
+            AppPaths.EnsureLogDirectory();
             var config = new LoggingConfiguration();
 
             // Step 2. Create targets and add them to the configuration 
@@ -12,8 +13,15 @@ namespace Mahou {
             config.AddTarget("file", fileTarget);
 
             // Step 3. Set target properties 
-            fileTarget.FileName = "${basedir}/logs/${shortdate}.log";
+            fileTarget.FileName = System.IO.Path.Combine(AppPaths.LogDirectory, "${shortdate}.log");
+#if DEBUG
             fileTarget.Layout = @"${longdate} ${uppercase:${level}} ${message} ${exception:format=toString}";
+#else
+            fileTarget.Layout = @"${longdate} ${uppercase:${level}} ${message} ${exception:format=Type,Message}";
+#endif
+            fileTarget.ArchiveAboveSize = 1024 * 1024;
+            fileTarget.MaxArchiveFiles = 7;
+            fileTarget.KeepFileOpen = false;
 
             LoggingRule rule2;
 #if DEBUG
