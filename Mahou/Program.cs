@@ -30,9 +30,6 @@ namespace Mahou {
 		public static Configs MyConfs = new Configs();
 		public static MahouForm mahou;
 		public static List<string> lcnmid = new List<string>();
-		public static string[] UI = { };
-		public static string[] TTips = { };
-		public static string[] Msgs = { };
 		#endregion
 		[STAThread] //DO NOT REMOVE THIS
 		public static void Main(string[] args) {
@@ -54,7 +51,7 @@ namespace Mahou {
 					mahou = new MahouForm();
 					InitLanguage();
 					//Refreshes icon text language at startup
-					mahou.icon.RefreshText(MMain.UI[44], MMain.UI[42], MMain.UI[43]);
+					mahou.icon.RefreshText(Translation.UI(UiText.TrayDescription), Translation.UI(UiText.TrayShowHide), Translation.UI(UiText.TrayExit));
 					KMHook.ReInitSnippets();
 					StartHook();
 					//for first run, add your locale 1 & locale 2 to settings
@@ -75,15 +72,11 @@ namespace Mahou {
 			}
 		}
 		public static void InitLanguage() {
-			if(MyConfs.Read("Locales", "LANGUAGE") == "RU") {
-				UI = Translation.UIRU;
-				TTips = Translation.ToolTipsRU;
-				Msgs = Translation.MessagesRU;
-			} else if(MyConfs.Read("Locales", "LANGUAGE") == "EN") {
-				UI = Translation.UIEN;
-				TTips = Translation.ToolTipsEN;
-				Msgs = Translation.MessagesEN;
+			var languageCode = Translation.NormalizeLanguageCode(MyConfs.Read("Locales", "LANGUAGE"));
+			if(languageCode != MyConfs.Read("Locales", "LANGUAGE")) {
+				MyConfs.Write("Locales", "LANGUAGE", languageCode);
 			}
+			Translation.SetLanguage(languageCode);
 		}
 		#region Actions with hooks
 		public static void StartHook() {

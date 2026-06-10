@@ -281,7 +281,7 @@ namespace Mahou {
 									KInputs.MakeInput(KInputs.AddString(exps[i]));
 								} catch {
 									// If not use TASK, form won't accept the keys(Enter/Escape/Alt+F4).
-									var tsk = new Task(() => MessageBox.Show(MMain.Msgs[10], MMain.Msgs[11], MessageBoxButtons.OK, MessageBoxIcon.Error));
+									var tsk = new Task(() => MessageBox.Show(Translation.Message(MessageText.SnippetsConfiguredWrong), Translation.Message(MessageText.SnippetsErrorTitle), MessageBoxButtons.OK, MessageBoxIcon.Error));
 									tsk.Start();
 									KInputs.MakeInput(KInputs.AddString(snip));
 								}

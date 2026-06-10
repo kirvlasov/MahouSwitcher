@@ -207,14 +207,14 @@ namespace Mahou
 			if (tmpSIKey != 0)
 				MMain.MyConfs.Write("Hotkeys", "HKSymIgnKey", tmpSIKey.ToString());
 			else
-				MessageBox.Show(MMain.Msgs[6], MMain.Msgs[5], MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(Translation.Message(MessageText.ConvertWordHotkeyModifiersOnly), Translation.Message(MessageText.WarningTitle), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			
 			if (!string.IsNullOrEmpty(tempConMorWorMods) && tempConMorWorKey != 0)
 				MMain.MyConfs.Write("Hotkeys", "HKConvertMoreMods", tempConMorWorMods);
 			if (tempConMorWorKey != 0)
 				MMain.MyConfs.Write("Hotkeys", "HKConvertMore", tempConMorWorKey.ToString());
 			else
-				MessageBox.Show(MMain.Msgs[6], MMain.Msgs[5], MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(Translation.Message(MessageText.ConvertWordHotkeyModifiersOnly), Translation.Message(MessageText.WarningTitle), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			if (MMain.MyConfs.ReadBool("Functions", "DisplayLang"))
 				MMain.mahou.ICheck.Start();
 			else
@@ -238,7 +238,7 @@ namespace Mahou
 				cbRCLocalesList.SelectedIndex = String.IsNullOrEmpty(MMain.MyConfs.Read("ExtCtrls", "RCLocaleName")) ? 1 
 					: MMain.lcnmid.IndexOf(MMain.MyConfs.Read("ExtCtrls", "RCLocaleName") + "(" + MMain.MyConfs.Read("ExtCtrls", "RCLocale") + ")");
 			} catch {
-				MessageBox.Show(MMain.Msgs[9], MMain.Msgs[5], MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				MessageBox.Show(Translation.Message(MessageText.SelectedLocalesRemoved), Translation.Message(MessageText.WarningTitle), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				RefreshLocales();
 				cbLCLocalesList.SelectedIndex = 0;
 				cbRCLocalesList.SelectedIndex = 1;
@@ -292,126 +292,126 @@ namespace Mahou
 		}
 		void RefreshLanguage() // Refreshes controls text
 		{
-			cbUseLRC.Text = MMain.UI[36];
-			lbLCto.Text = MMain.UI[37];
-			lbRCto.Text = MMain.UI[38];
-			Text = MMain.UI[39];
-			cbSymIgn.Text = MMain.UI[40];
-			cbMoreTries.Text = MMain.UI[41];
-			btnNO.Text = MMain.UI[19];
-			cbDisplayLang.Text = MMain.UI[45];
-			lblRefRate.Text = MMain.UI[46];
-			lbColors.Text = MMain.UI[47];
-			btFont.Text = MMain.UI[52];
-			lbSize.Text = MMain.UI[53];
-			lbPosition.Text = MMain.UI[54];
-			btnEMore.Text = !pEExtra.Visible ? MMain.UI[55] : MMain.UI[56];
-			cbDoublePress.Text = MMain.UI[57];
-			lbDDelay.Text = MMain.UI[58];
-			cbExCSSwitch.Text = MMain.UI[59];
-			cbTrBLT.Text = MMain.UI[60];
-			cbUseSnippets.Text = MMain.UI[61];
-			cbOnChange.Text = MMain.UI[62];
-			cbScrollLight.Text 	= MMain.UI[63];
-				lbConMorWor.Text = MMain.UI[65];
+			cbUseLRC.Text = Translation.UI(UiText.UseSpecificLayoutChangingByLeftRightCtrls);
+			lbLCto.Text = Translation.UI(UiText.LCtrlSwitchesTo);
+			lbRCto.Text = Translation.UI(UiText.RCtrlSwitchesTo);
+			Text = Translation.UI(UiText.MoreConfigs);
+			cbSymIgn.Text = Translation.UI(UiText.SymbolIgnore);
+			cbMoreTries.Text = Translation.UI(UiText.MoreTries);
+			btnNO.Text = Translation.UI(UiText.Cancel);
+			cbDisplayLang.Text = Translation.UI(UiText.DisplayLanguage);
+			lblRefRate.Text = Translation.UI(UiText.RefreshRateMs);
+			lbColors.Text = Translation.UI(UiText.Colors);
+			btFont.Text = Translation.UI(UiText.Font);
+			lbSize.Text = Translation.UI(UiText.Size);
+			lbPosition.Text = Translation.UI(UiText.Position);
+			btnEMore.Text = !pEExtra.Visible ? Translation.UI(UiText.More) : Translation.UI(UiText.Back);
+			cbDoublePress.Text = Translation.UI(UiText.DoubleHotkey);
+			lbDDelay.Text = Translation.UI(UiText.Delay);
+			cbExCSSwitch.Text = Translation.UI(UiText.ExperimentalCsSwitchPlus);
+			cbTrBLT.Text = Translation.UI(UiText.TransparentBackgroundInLanguageTooltip);
+			cbUseSnippets.Text = Translation.UI(UiText.UseSnippets);
+			cbOnChange.Text = Translation.UI(UiText.OnChange);
+			cbScrollLight.Text 	= Translation.UI(UiText.HighlightScrollLockWhenLanguage1Active);
+				lbConMorWor.Text = Translation.UI(UiText.ConvertMultipleWordsHotkey);
 		}
 		#endregion
 		#region Tooltips
 		void cbLCLocalesList_MouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbLCLocalesList.Text;
-			HelpTT.Show(MMain.TTips[16], cbLCLocalesList);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.LCtrlSpecificLayout), cbLCLocalesList);
 		}
 		void cbRCLocalesList_MouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbRCLocalesList.Text;
-			HelpTT.Show(MMain.TTips[17], cbRCLocalesList);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.RCtrlSpecificLayout), cbRCLocalesList);
 		}
 		void cbUseLRC_MouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbUseLRC.Text;
-			HelpTT.Show(MMain.TTips[18], cbUseLRC);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.UseSpecificLayoutChanging), cbUseLRC);
 		}
 		void cbSymIgn_MouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbSymIgn.Text;
-			HelpTT.Show(MMain.TTips[20], cbSymIgn);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.SymbolIgnore), cbSymIgn);
 		}
 		void cbMoreTries_MouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbMoreTries.Text;
-			HelpTT.Show(MMain.TTips[21], cbMoreTries);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.MoreTries), cbMoreTries);
 		}
 		void CbDisplayLangMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbDisplayLang.Text;
-			HelpTT.Show(MMain.TTips[22], cbDisplayLang);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.DisplayLanguage), cbDisplayLang);
 		}
 		void LblRefRateMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = lblRefRate.Text;
-			HelpTT.Show(MMain.TTips[23], lblRefRate);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.RefreshRate), lblRefRate);
 		}
 		void LbColorsMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = lbColors.Text;
-			HelpTT.Show(MMain.TTips[24], lbColors);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.Colors), lbColors);
 	
 		}
 		void LbSizeMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = lbSize.Text;
-			HelpTT.Show(MMain.TTips[25], lbSize);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.Size), lbSize);
 		}
 		void LbPositionMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = lbPosition.Text;
-			HelpTT.Show(MMain.TTips[26], lbPosition);
+			HelpTT.Show(Translation.ToolTip(ToolTipText.Position), lbPosition);
 		}
 		void CbDoublePressMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbDoublePress.Text;
-			HelpTT.Show(MMain.TTips[27], cbDoublePress);	
+			HelpTT.Show(Translation.ToolTip(ToolTipText.DoubleHotkey), cbDoublePress);	
 		}
 		void LbDDelayMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = lbDDelay.Text;
-			HelpTT.Show(MMain.TTips[28], lbDDelay);	
+			HelpTT.Show(Translation.ToolTip(ToolTipText.DoubleHotkeyDelay), lbDDelay);	
 		}
 		void CbExCSSwitchMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbExCSSwitch.Text;
-			HelpTT.Show(MMain.TTips[29], cbExCSSwitch);	
+			HelpTT.Show(Translation.ToolTip(ToolTipText.ExperimentalCsSwitchPlus), cbExCSSwitch);	
 		}
 		void CbTrBLTMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbTrBLT.Text;
-			HelpTT.Show(MMain.TTips[30], cbTrBLT);	
+			HelpTT.Show(Translation.ToolTip(ToolTipText.TransparentBackground), cbTrBLT);	
 		}
 		void CbUseSnippetsMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbUseSnippets.Text;
-			HelpTT.Show(MMain.TTips[31], cbUseSnippets);	
+			HelpTT.Show(Translation.ToolTip(ToolTipText.UseSnippets), cbUseSnippets);	
 		}
 		void CbOnChangeMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbOnChange.Text;
-			HelpTT.Show(MMain.TTips[32], cbOnChange);	
+			HelpTT.Show(Translation.ToolTip(ToolTipText.OnChange), cbOnChange);	
 		}
 		void CbScrollLightMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = cbScrollLight.Text;
-			HelpTT.Show(MMain.TTips[33], cbScrollLight);	
+			HelpTT.Show(Translation.ToolTip(ToolTipText.ScrollLockHighlight), cbScrollLight);	
 		}
 		void LbConMorWorMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = lbConMorWor.Text;
-			HelpTT.Show(MMain.TTips[35], lbConMorWor);		
+			HelpTT.Show(Translation.ToolTip(ToolTipText.ConvertMultipleWords), lbConMorWor);		
 		}
 		void TbConMorWorMouseHover(object sender, EventArgs e)
 		{
 			HelpTT.ToolTipTitle = lbConMorWor.Text;
-			HelpTT.Show(MMain.TTips[35], tbConMorWor);	
+			HelpTT.Show(Translation.ToolTip(ToolTipText.ConvertMultipleWords), tbConMorWor);	
 		}
 		#endregion
 	}
